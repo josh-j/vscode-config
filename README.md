@@ -17,6 +17,7 @@ VS Code stores these files in `%APPDATA%\Code\User\` on Windows, `~/Library/Appl
 | --- | --- | --- |
 | Required for the modal keymap | [Dance](https://marketplace.visualstudio.com/items?itemName=gregoire.dance) (`gregoire.dance`) | Provides the `dance.*` modes and commands used throughout both files. |
 | Required for the Helix layout | [Dance - Helix keybindings](https://marketplace.visualstudio.com/items?itemName=gregoire.dance-helix) (`gregoire.dance-helix`) | Provides the `helix/normal`, `helix/insert`, and `helix/select` modes selected by the settings. |
+| Required for the buffer and pane actions | [Helix Workbench](extensions/helix-workbench/README.md) (`sio.helix-workbench`) | Provides the `sio.*` commands used by the keybindings and Dance menus. Build it from the source in this repo. |
 | Recommended for Nix files | [Nix IDE](https://marketplace.visualstudio.com/items?itemName=jnoortheen.nix-ide) (`jnoortheen.nix-ide`) | Supplies the configured Nix formatter and language support. Install `nixd` and `alejandra` on your `PATH` for the configured language server and formatting. |
 | Recommended for shell scripts | [shell-format](https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format) (`foxundermoon.shell-format`) | Supplies the configured shell formatter. Install `shfmt` on your `PATH`, or set `shellformat.path` locally. |
 
@@ -29,6 +30,13 @@ code --install-extension jnoortheen.nix-ide
 code --install-extension foxundermoon.shell-format
 ```
 
-Some buffer, pane, and terminal shortcuts and Dance menus call `sio.*` commands from my local **Helix Workbench** extension (`sio.helix-workbench`). It is not published in the marketplace or included here. Without it, those actions do nothing; remove the `sio.*` bindings, menu entries, and `terminal.integrated.commandsToSkipShell` entries if you do not use it.
+Build and install Helix Workbench from this checkout:
+
+```sh
+python3 extensions/helix-workbench/package.py helix-workbench.vsix
+code --install-extension helix-workbench.vsix
+```
+
+Reload VS Code after installation. On Windows, use `python` if `python3` is not available. The extension has no runtime dependencies; see its [README](extensions/helix-workbench/README.md) for the buffer and pane commands. If you skip it, remove the `sio.*` bindings, Dance menu entries, and `terminal.integrated.commandsToSkipShell` entries because those actions will not work.
 
 The configured editor and terminal font is **JetBrains Mono**. Install that font for the same appearance, or change the two font settings to one you already have.

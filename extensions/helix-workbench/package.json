@@ -1,0 +1,49 @@
+{
+  "name": "helix-workbench",
+  "publisher": "sio",
+  "displayName": "Helix Workbench",
+  "description": "Shared text and terminal buffers with separate pane/buffer commands for Dance Helix.",
+  "version": "0.2.0",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "sio.buffers.pick",
+        "title": "Helix: Pick Buffer"
+      },
+      {
+        "command": "sio.buffers.next",
+        "title": "Helix: Next Buffer"
+      },
+      {
+        "command": "sio.buffers.previous",
+        "title": "Helix: Previous Buffer"
+      },
+      {
+        "command": "sio.buffers.close",
+        "title": "Helix: Close Buffer Everywhere"
+      },
+      {
+        "command": "sio.panes.close",
+        "title": "Helix: Close Pane, Keep Buffers"
+      },
+      {
+        "command": "sio.panes.only",
+        "title": "Helix: Keep Only This Pane"
+      },
+      {
+        "command": "sio.terminals.open",
+        "title": "Helix: Open Terminal Buffer"
+      }
+    ]
+  }
+}
