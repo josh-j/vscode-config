@@ -1,0 +1,1568 @@
+{
+  "dance.defaultMode": "helix/normal",
+  "dance.menus": {
+    "match": {
+      "title": "Match",
+      "items": {
+        "m": {
+          "command": "dance.seek.enclosing",
+          "text": "Goto matching bracket"
+        },
+        "a": {
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "object",
+              "title": "Match around"
+            }
+          ],
+          "text": "Select around object"
+        },
+        "i": {
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "object",
+              "title": "Match inside",
+              "pass": [
+                {
+                  "inner": true
+                }
+              ]
+            }
+          ],
+          "text": "Select inside object"
+        },
+        "s": {
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "surround",
+              "title": "Surround object"
+            }
+          ],
+          "text": "Surround object"
+        },
+        "r": {
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "resurround",
+              "title": "Resurround object"
+            }
+          ],
+          "text": "Resurround object"
+        },
+        "d": {
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "unsurround",
+              "title": "Unsurround object"
+            }
+          ],
+          "text": "Unsurround object"
+        }
+      }
+    },
+    "object": {
+      "title": "Select object...",
+      "items": {
+        "()": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\((?#inner)\\)"
+            }
+          ],
+          "text": "parenthesis block"
+        },
+        "{}": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\{(?#inner)\\}"
+            }
+          ],
+          "text": "braces block"
+        },
+        "[]": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "\\[(?#inner)\\]"
+            }
+          ],
+          "text": "brackets block"
+        },
+        "<>": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "<(?#inner)>"
+            }
+          ],
+          "text": "angle block"
+        },
+        "\"": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)\"(?#inner)(?#noescape)\""
+            }
+          ],
+          "text": "double quote string"
+        },
+        "'": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)'(?#inner)(?#noescape)'"
+            }
+          ],
+          "text": "single quote string"
+        },
+        "`": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#noescape)`(?#inner)(?#noescape)`"
+            }
+          ],
+          "text": "grave quote string"
+        },
+        "w": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "[\\p{L}_\\d]+(?<after>[^\\S\\n]+)"
+            }
+          ],
+          "text": "word"
+        },
+        "W": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "[\\S]+(?<after>[^\\S\\n]+)"
+            }
+          ],
+          "text": "WORD"
+        },
+        "p": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#predefined=paragraph)"
+            }
+          ],
+          "text": "paragraph"
+        },
+        "a": {
+          "command": "dance.seek.object",
+          "args": [
+            {
+              "input": "(?#predefined=argument)"
+            }
+          ],
+          "text": "argument"
+        },
+        "!": {
+          "command": "dance.seek.object",
+          "text": "custom object desc"
+        }
+      }
+    },
+    "surround": {
+      "title": "Surround object with...",
+      "items": {
+        "()": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "(",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": ")",
+                  "where": "end"
+                }
+              }
+            ]
+          },
+          "text": "parenthesis block"
+        },
+        "{}": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "{",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "}",
+                  "where": "end"
+                }
+              }
+            ]
+          },
+          "text": "braces block"
+        },
+        "[]": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "[",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "]",
+                  "where": "end"
+                }
+              }
+            ]
+          },
+          "text": "brackets block"
+        },
+        "<>": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "<",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": ">",
+                  "where": "end"
+                }
+              }
+            ]
+          },
+          "text": "angle block"
+        },
+        "\"": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "\"",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "\"",
+                  "where": "end"
+                }
+              }
+            ]
+          },
+          "text": "double quote string"
+        },
+        "'": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "'",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "'",
+                  "where": "end"
+                }
+              }
+            ]
+          },
+          "text": "single quote string"
+        },
+        "`": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "`",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "shift": "extend",
+                  "text": "`",
+                  "where": "end"
+                }
+              }
+            ]
+          },
+          "text": "grave quote string"
+        }
+      }
+    },
+    "resurround": {
+      "title": "Resurround object...",
+      "items": {
+        "()": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.enclosing",
+                "args": {
+                  "pairs": [
+                    "\\(",
+                    "\\)",
+                    "\\{",
+                    "\\}",
+                    "\\[",
+                    "\\]",
+                    "<",
+                    ">",
+                    "\"",
+                    "\"",
+                    "'",
+                    "'",
+                    "`",
+                    "`"
+                  ]
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "(",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": ")",
+                  "where": "end"
+                }
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "parenthesis block"
+        },
+        "{}": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.enclosing",
+                "args": {
+                  "pairs": [
+                    "\\(",
+                    "\\)",
+                    "\\{",
+                    "\\}",
+                    "\\[",
+                    "\\]",
+                    "<",
+                    ">",
+                    "\"",
+                    "\"",
+                    "'",
+                    "'",
+                    "`",
+                    "`"
+                  ]
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "{",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "}",
+                  "where": "end"
+                }
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "braces block"
+        },
+        "[]": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.enclosing",
+                "args": {
+                  "pairs": [
+                    "\\(",
+                    "\\)",
+                    "\\{",
+                    "\\}",
+                    "\\[",
+                    "\\]",
+                    "<",
+                    ">",
+                    "\"",
+                    "\"",
+                    "'",
+                    "'",
+                    "`",
+                    "`"
+                  ]
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "[",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "]",
+                  "where": "end"
+                }
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "brackets block"
+        },
+        "<>": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.enclosing",
+                "args": {
+                  "pairs": [
+                    "\\(",
+                    "\\)",
+                    "\\{",
+                    "\\}",
+                    "\\[",
+                    "\\]",
+                    "<",
+                    ">",
+                    "\"",
+                    "\"",
+                    "'",
+                    "'",
+                    "`",
+                    "`"
+                  ]
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "<",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": ">",
+                  "where": "end"
+                }
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "angle block"
+        },
+        "\"": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.enclosing",
+                "args": {
+                  "pairs": [
+                    "\\(",
+                    "\\)",
+                    "\\{",
+                    "\\}",
+                    "\\[",
+                    "\\]",
+                    "<",
+                    ">",
+                    "\"",
+                    "\"",
+                    "'",
+                    "'",
+                    "`",
+                    "`"
+                  ]
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "\"",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "\"",
+                  "where": "end"
+                }
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "double quote string"
+        },
+        "'": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.enclosing",
+                "args": {
+                  "pairs": [
+                    "\\(",
+                    "\\)",
+                    "\\{",
+                    "\\}",
+                    "\\[",
+                    "\\]",
+                    "<",
+                    ">",
+                    "\"",
+                    "\"",
+                    "'",
+                    "'",
+                    "`",
+                    "`"
+                  ]
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "'",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "'",
+                  "where": "end"
+                }
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "single quote string"
+        },
+        "`": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.enclosing",
+                "args": {
+                  "pairs": [
+                    "\\(",
+                    "\\)",
+                    "\\{",
+                    "\\}",
+                    "\\[",
+                    "\\]",
+                    "<",
+                    ">",
+                    "\"",
+                    "\"",
+                    "'",
+                    "'",
+                    "`",
+                    "`"
+                  ]
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "`",
+                  "where": "start"
+                }
+              },
+              {
+                "command": "dance.edit.insert",
+                "args": {
+                  "text": "`",
+                  "where": "end"
+                }
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "grave quote string"
+        }
+      }
+    },
+    "unsurround": {
+      "title": "Unsurround object...",
+      "items": {
+        "m": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.enclosing"
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "enclosing pair"
+        },
+        "()": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.object",
+                "args": [
+                  {
+                    "input": "\\((?#inner)\\)"
+                  }
+                ]
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "parenthesis block"
+        },
+        "{}": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.object",
+                "args": [
+                  {
+                    "input": "\\{(?#inner)\\}"
+                  }
+                ]
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "braces block"
+        },
+        "[]": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.object",
+                "args": [
+                  {
+                    "input": "\\[(?#inner)\\]"
+                  }
+                ]
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "brackets block"
+        },
+        "<>": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.object",
+                "args": [
+                  {
+                    "input": "<(?#inner)>"
+                  }
+                ]
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "angle block"
+        },
+        "\"": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.object",
+                "args": [
+                  {
+                    "input": "(?#noescape)\"(?#inner)(?#noescape)\""
+                  }
+                ]
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "double quote string"
+        },
+        "'": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.object",
+                "args": [
+                  {
+                    "input": "(?#noescape)'(?#inner)(?#noescape)'"
+                  }
+                ]
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "single quote string"
+        },
+        "`": {
+          "command": "dance.run",
+          "args": {
+            "commands": [
+              {
+                "command": "dance.seek.object",
+                "args": [
+                  {
+                    "input": "(?#noescape)`(?#inner)(?#noescape)`"
+                  }
+                ]
+              },
+              {
+                "command": "dance.selections.reduce.edges"
+              },
+              {
+                "command": "dance.edit.delete"
+              },
+              {
+                "command": "dance.selections.clear.secondary"
+              }
+            ]
+          },
+          "text": "grave quote string"
+        }
+      }
+    },
+    "view": {
+      "title": "View",
+      "items": {
+        "cz": {
+          "text": "Align view center",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "center"
+            }
+          ]
+        },
+        "t": {
+          "text": "Align view top",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "top"
+            }
+          ]
+        },
+        "b": {
+          "text": "Align view bottom",
+          "command": "dance.view.line",
+          "args": [
+            {
+              "at": "bottom"
+            }
+          ]
+        },
+        "k": {
+          "text": "Scroll view up",
+          "command": "editorScroll",
+          "args": [
+            {
+              "by": "line",
+              "revealCursor": true,
+              "to": "up"
+            }
+          ]
+        },
+        "j": {
+          "text": "Scroll view down",
+          "command": "editorScroll",
+          "args": [
+            {
+              "by": "line",
+              "revealCursor": true,
+              "to": "down"
+            }
+          ]
+        },
+        "/": {
+          "text": "Search for regex pattern",
+          "command": "dance.search"
+        },
+        "?": {
+          "text": "Reverse search for regex pattern",
+          "command": "dance.search.backward"
+        },
+        "n": {
+          "text": "Select next search match",
+          "command": "dance.search.next"
+        },
+        "N": {
+          "text": "Select previous search match",
+          "command": "dance.search.previous"
+        }
+      }
+    },
+    "goto": {
+      "title": "Goto",
+      "items": {
+        "g": {
+          "text": "to line number else file start",
+          "command": "dance.select.lineStart",
+          "args": [
+            {
+              "count": 1
+            }
+          ]
+        },
+        "e": {
+          "text": "to last line",
+          "command": "dance.select.lineEnd",
+          "args": [
+            {
+              "count": 2147483647
+            }
+          ]
+        },
+        "f": {
+          "text": "to file/URLs in selections",
+          "command": "dance.selections.open"
+        },
+        "h": {
+          "text": "to line start",
+          "command": "dance.select.lineStart"
+        },
+        "l": {
+          "text": "to line end",
+          "command": "dance.select.lineEnd"
+        },
+        "s": {
+          "text": "to first non-blank in line",
+          "command": "dance.select.lineStart",
+          "args": [
+            {
+              "skipBlank": true
+            }
+          ]
+        },
+        "d": {
+          "text": "to definition",
+          "command": "editor.action.revealDefinition"
+        },
+        "r": {
+          "text": "to references",
+          "command": "editor.action.goToReferences"
+        },
+        "j": {
+          "text": "to last line",
+          "command": "dance.select.lastLine"
+        },
+        "t": {
+          "text": "to window top",
+          "command": "dance.select.firstVisibleLine"
+        },
+        "c": {
+          "text": "to window center",
+          "command": "dance.select.middleVisibleLine"
+        },
+        "b": {
+          "text": "to window bottom",
+          "command": "dance.select.lastVisibleLine"
+        },
+        "a": {
+          "command": "editor.action.quickFix",
+          "text": "Code action"
+        },
+        "A": {
+          "text": "to last buffer...",
+          "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+        },
+        "n": {
+          "command": "sio.buffers.next",
+          "text": "Next shared buffer"
+        },
+        "p": {
+          "command": "sio.buffers.previous",
+          "text": "Previous shared buffer"
+        },
+        ".": {
+          "text": "to last buffer modification position",
+          "command": "dance.selections.restore",
+          "args": [
+            {
+              "register": " insert"
+            }
+          ]
+        }
+      }
+    },
+    "space": {
+      "title": "Space",
+      "items": {
+        "f": {
+          "text": "Open file picker",
+          "command": "workbench.action.quickOpen"
+        },
+        "F": {
+          "text": "Open file picker at current working directory",
+          "command": "dance.run",
+          "args": [
+            {
+              "code": [
+                "const fallback = () => vscode.commands.executeCommand(",
+                "  'workbench.action.quickOpen',",
+                ");",
+                "const editor = vscode.window.activeTextEditor;",
+                "if (!editor) {",
+                "  return await fallback();",
+                "}",
+                "const currentFileUri = editor.document.uri;",
+                "const currentDirectoryUri = vscode.Uri.joinPath(currentFileUri, '..');",
+                "const workspaceFolder = vscode.workspace.getWorkspaceFolder(currentFileUri);",
+                "if (!workspaceFolder || currentDirectoryUri.fsPath === workspaceFolder.uri.fsPath) {",
+                "  return await fallback();",
+                "}",
+                "const relativeDirectoryPath = vscode.workspace.asRelativePath(",
+                "  currentDirectoryUri,",
+                "  /** includeWorkspaceFolder = */ false",
+                ");",
+                "const quickOpenPrefix = relativeDirectoryPath.endsWith('/') ?",
+                "    relativeDirectoryPath",
+                "    : relativeDirectoryPath + \"/\";",
+                "await vscode.commands.executeCommand(",
+                "  'workbench.action.quickOpen',",
+                "  quickOpenPrefix,",
+                ");"
+              ]
+            }
+          ]
+        },
+        "b": {
+          "command": "sio.buffers.pick",
+          "text": "Shared buffer picker"
+        },
+        "s": {
+          "text": "Open symbol picker",
+          "command": "workbench.action.gotoSymbol"
+        },
+        "S": {
+          "text": "Open workspace symbol picker",
+          "command": "workbench.action.showAllSymbols"
+        },
+        "d": {
+          "text": "Open diagnostic picker",
+          "command": "workbench.action.problems.focus"
+        },
+        "D": {
+          "text": "Open diagnostic picker",
+          "command": "workbench.action.problems.focus"
+        },
+        "g": {
+          "text": "Open changed file picker",
+          "command": "workbench.view.scm"
+        },
+        "a": {
+          "text": "Perform code action",
+          "command": "editor.action.quickFix"
+        },
+        "G": {
+          "text": "Debug",
+          "command": "workbench.action.debug.start"
+        },
+        "w": {
+          "text": "Window",
+          "command": "dance.openMenu",
+          "args": [
+            {
+              "menu": "window"
+            }
+          ]
+        },
+        "y": {
+          "text": "Yank selections to clipboard",
+          "command": "dance.selections.saveText",
+          "args": [
+            {
+              "register": "dquote"
+            }
+          ]
+        },
+        "Y": {
+          "text": "Yank main selection to clipboard",
+          "command": "dance.run",
+          "args": [
+            {
+              "code": [
+                "const editor = vscode.window.activeTextEditor;",
+                "if (!editor) {",
+                "  return;",
+                "}",
+                "const text = editor.document.getText(editor.selection);",
+                "await vscode.env.clipboard.writeText(text);"
+              ]
+            }
+          ]
+        },
+        "p": {
+          "text": "Paste clipboard after selections",
+          "command": "dance.edit.insert",
+          "args": [
+            {
+              "register": "dquote",
+              "handleNewLine": true,
+              "where": "end"
+            }
+          ]
+        },
+        "P": {
+          "text": "Paste clipboard before selections",
+          "command": "dance.edit.insert",
+          "args": [
+            {
+              "register": "dquote",
+              "handleNewLine": true,
+              "where": "start"
+            }
+          ]
+        },
+        "R": {
+          "text": "Replace selections by clipboard content",
+          "command": "editor.action.clipboardPasteAction",
+          "args": []
+        },
+        "/": {
+          "text": "Global Search in workspace folder",
+          "command": "workbench.action.findInFiles"
+        },
+        "k": {
+          "text": "Show docs for item under cursor (hover)",
+          "command": "editor.action.showHover"
+        },
+        "r": {
+          "text": "Rename symbol",
+          "command": "editor.action.rename"
+        },
+        "h": {
+          "text": "Select symbol reference",
+          "command": "editor.action.referenceSearch.trigger"
+        },
+        " ": {
+          "command": "workbench.action.quickOpen",
+          "text": "Find file"
+        },
+        "o": {
+          "command": "workbench.action.files.save",
+          "text": "Save file"
+        },
+        "q": {
+          "command": "sio.panes.close",
+          "text": "Close pane, keep buffers"
+        },
+        ";": {
+          "command": "workbench.action.showCommands",
+          "text": "Command palette"
+        },
+        "e": {
+          "command": "workbench.view.explorer",
+          "text": "Focus file explorer"
+        },
+        "c": {
+          "command": "editor.action.commentLine",
+          "text": "Toggle comment"
+        },
+        "l": {
+          "command": "dance.openMenu",
+          "text": "Language tools",
+          "args": [
+            {
+              "menu": "sio-language"
+            }
+          ]
+        },
+        "t": {
+          "command": "sio.terminals.open",
+          "text": "Open terminal buffer"
+        },
+        "z": {
+          "command": "workbench.action.toggleZenMode",
+          "text": "Toggle distraction-free layout"
+        },
+        "u": {
+          "command": "dance.openMenu",
+          "text": "Interface",
+          "args": [
+            {
+              "menu": "sio-ui"
+            }
+          ]
+        },
+        "?": {
+          "command": "workbench.action.openGlobalKeybindings",
+          "text": "Search keyboard shortcuts"
+        },
+        "B": {
+          "command": "sio.buffers.close",
+          "text": "Close buffer everywhere (save first)"
+        }
+      }
+    },
+    "window": {
+      "title": "Window",
+      "items": {
+        "w": {
+          "command": "workbench.action.focusNextGroup",
+          "text": "Focus next split"
+        },
+        "s": {
+          "text": "Horizontal bottom split",
+          "command": "workbench.action.splitEditorDown"
+        },
+        "v": {
+          "command": "workbench.action.splitEditorRight",
+          "text": "Split right"
+        },
+        "t": {
+          "text": "Transpose splits",
+          "command": "workbench.action.toggleEditorGroupLayout"
+        },
+        "q": {
+          "command": "sio.panes.close",
+          "text": "Close pane, keep buffers"
+        },
+        "o": {
+          "command": "sio.panes.only",
+          "text": "Keep this pane, retain all buffers"
+        },
+        "h": {
+          "text": "Jump to the split on the left",
+          "command": "workbench.action.focusLeftGroup"
+        },
+        "j": {
+          "text": "Jump to the split below",
+          "command": "workbench.action.focusBelowGroup"
+        },
+        "k": {
+          "text": "Jump to the split above",
+          "command": "workbench.action.focusAboveGroup"
+        },
+        "l": {
+          "text": "Jump to the split to the right",
+          "command": "workbench.action.focusRightGroup"
+        },
+        "H": {
+          "text": "Swap with the split to the left",
+          "command": "workbench.action.moveActiveEditorGroupLeft"
+        },
+        "J": {
+          "text": "Swap with the split below",
+          "command": "workbench.action.moveActiveEditorGroupDown"
+        },
+        "K": {
+          "text": "Swap with the split above",
+          "command": "workbench.action.moveActiveEditorGroupUp"
+        },
+        "L": {
+          "text": "Swap with the split to the right",
+          "command": "workbench.action.moveActiveEditorGroupRight"
+        }
+      }
+    },
+    "sio-language": {
+      "title": "Language tools",
+      "items": {
+        "f": {
+          "command": "editor.action.formatDocument",
+          "text": "Format document"
+        },
+        "r": {
+          "command": "workbench.action.restartExtensionHost",
+          "text": "Restart extension host (all language extensions)"
+        }
+      }
+    },
+    "sio-tools": {
+      "title": "Tools",
+      "items": {
+        "g": {
+          "command": "workbench.view.scm",
+          "text": "Git source control"
+        },
+        "e": {
+          "command": "workbench.view.explorer",
+          "text": "File explorer"
+        },
+        "c": {
+          "command": "workbench.action.tasks.build",
+          "text": "Build task"
+        },
+        "r": {
+          "command": "workbench.action.tasks.runTask",
+          "text": "Run task"
+        }
+      }
+    },
+    "sio-ui": {
+      "title": "Interface",
+      "items": {
+        "b": {
+          "command": "workbench.action.toggleSidebarVisibility",
+          "text": "Toggle sidebar"
+        },
+        "p": {
+          "command": "workbench.action.togglePanel",
+          "text": "Toggle panel"
+        },
+        "a": {
+          "command": "workbench.action.toggleActivityBarVisibility",
+          "text": "Toggle activity bar"
+        },
+        "s": {
+          "command": "workbench.action.openSettings",
+          "text": "Settings"
+        }
+      }
+    }
+  },
+  "editor.lineNumbers": "relative",
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 120,
+  "editor.renderLineHighlight": "none",
+  "editor.guides.indentation": true,
+  "editor.inlayHints.enabled": "on",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "dance.modes": {
+    "helix/insert": {
+      "lineNumbers": "relative",
+      "onLeaveMode": [
+        [
+          ".selections.save",
+          {
+            "register": " insert"
+          }
+        ]
+      ],
+      "cursorStyle": "line"
+    },
+    "helix/select": {
+      "lineNumbers": "relative",
+      "cursorStyle": "underline",
+      "selectionBehavior": "character"
+    },
+    "helix/normal": {
+      "lineNumbers": "relative",
+      "cursorStyle": "block",
+      "selectionBehavior": "character",
+      "decorations": {},
+      "onEnterMode": [
+        [
+          ".selections.restore",
+          {
+            "register": " ^",
+            "try": true
+          }
+        ]
+      ],
+      "onLeaveMode": [
+        [
+          ".selections.save",
+          {
+            "register": " ^",
+            "style": {
+              "borderColor": "$editor.selectionBackground",
+              "borderStyle": "solid",
+              "borderWidth": "2px",
+              "borderRadius": "1px"
+            },
+            "until": [
+              [
+                "mode-did-change",
+                {
+                  "include": "normal"
+                }
+              ],
+              [
+                "selections-did-change"
+              ]
+            ]
+          }
+        ]
+      ]
+    }
+  },
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.activityBar.location": "hidden",
+  "workbench.editor.showTabs": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.startupEditor": "welcomePage",
+  "workbench.tips.enabled": false,
+  "workbench.list.defaultFindMode": "filter",
+  "workbench.list.typeNavigationMode": "trigger",
+  "window.menuBarVisibility": "toggle",
+  "window.commandCenter": false,
+  "workbench.editor.revealIfOpen": false,
+  "workbench.editor.closeEmptyGroups": false,
+  "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
+  "nix.formatterPath": "alejandra",
+  "nix.serverSettings": {
+    "nixd": {
+      "formatting": {
+        "command": [
+          "alejandra"
+        ]
+      }
+    }
+  },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.allowChords": true,
+  "terminal.integrated.commandsToSkipShell": [
+    "sio.buffers.pick",
+    "sio.buffers.next",
+    "sio.buffers.previous",
+    "sio.buffers.close",
+    "sio.panes.close",
+    "sio.panes.only",
+    "sio.terminals.open"
+  ],
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorCustomizations": {
+    "editor.background": "#211c1c",
+    "editor.foreground": "#f3f2f2",
+    "editorLineNumber.foreground": "#6d6666",
+    "editorLineNumber.activeForeground": "#f3f2f2",
+    "editor.lineHighlightBackground": "#372f2f",
+    "editor.selectionBackground": "#514949",
+    "editorCursor.foreground": "#a6a6a6",
+    "editorIndentGuide.background1": "#706665",
+    "editorIndentGuide.activeBackground1": "#6d6666",
+    "sideBar.background": "#211c1c",
+    "sideBar.foreground": "#f3f2f2",
+    "sideBarTitle.foreground": "#f3f2f2",
+    "activityBar.background": "#372f2f",
+    "activityBar.foreground": "#f3f2f2",
+    "titleBar.activeBackground": "#372f2f",
+    "titleBar.activeForeground": "#f3f2f2",
+    "statusBar.background": "#322a2a",
+    "statusBar.foreground": "#f3f2f2",
+    "panel.background": "#211c1c",
+    "panelTitle.activeForeground": "#a6a6a6",
+    "tab.activeBackground": "#211c1c",
+    "tab.activeForeground": "#f3f2f2",
+    "tab.inactiveBackground": "#372f2f",
+    "tab.inactiveForeground": "#b5b0b0",
+    "list.activeSelectionBackground": "#514949",
+    "list.activeSelectionForeground": "#e7e4e4",
+    "list.hoverBackground": "#322a2a",
+    "input.background": "#372f2f",
+    "input.foreground": "#f3f2f2",
+    "dropdown.background": "#372f2f",
+    "dropdown.foreground": "#f3f2f2",
+    "terminal.background": "#211c1c",
+    "terminal.foreground": "#f3f2f2",
+    "terminalCursor.foreground": "#a6a6a6"
+  },
+  "editor.tokenColorCustomizations": {
+    "comments": "#6d6666",
+    "keywords": "#a6a6a6",
+    "strings": "#999999",
+    "functions": "#999999",
+    "types": "#999999",
+    "variables": "#f3f2f2",
+    "numbers": "#999999"
+  },
+  "editor.fontFamily": "'JetBrains Mono', monospace",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+  "terminal.integrated.fontSize": 16
+}

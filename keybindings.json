@@ -1,0 +1,602 @@
+[
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeGroup"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.terminal.killEditor"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.closeWindow"
+  },
+  {
+    "key": "escape",
+    "command": "list.closeFind",
+    "when": "treeFindOpen"
+  },
+  {
+    "key": "escape",
+    "command": "closeReferenceSearch",
+    "when": "referenceSearchVisible"
+  },
+  {
+    "key": "/",
+    "command": "list.find",
+    "when": "listFocus && listSupportsFind"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "command": "workbench.view.scm",
+    "key": "ctrl+shift+g"
+  },
+  {
+    "key": "ctrl+s",
+    "command": "git.stage",
+    "when": "activeViewlet == 'workbench.view.scm' && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "git.unstage",
+    "when": "activeViewlet == 'workbench.view.scm' && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+alt+enter",
+    "command": "git.commitAllSigned",
+    "when": "activeViewlet == 'workbench.view.scm' && sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "shift+alt+1",
+    "command": "-workbench.action.moveEditorToFirstGroup"
+  },
+  {
+    "key": "alt+1",
+    "command": "-workbench.action.openEditorAtIndex1"
+  },
+  {
+    "key": "alt+2",
+    "command": "-workbench.action.openEditorAtIndex2"
+  },
+  {
+    "key": "alt+3",
+    "command": "-workbench.action.openEditorAtIndex3"
+  },
+  {
+    "key": "alt+4",
+    "command": "-workbench.action.openEditorAtIndex4"
+  },
+  {
+    "key": "alt+5",
+    "command": "-workbench.action.openEditorAtIndex5"
+  },
+  {
+    "key": "alt+6",
+    "command": "-workbench.action.openEditorAtIndex6"
+  },
+  {
+    "key": "alt+7",
+    "command": "-workbench.action.openEditorAtIndex7"
+  },
+  {
+    "key": "alt+8",
+    "command": "-workbench.action.openEditorAtIndex8"
+  },
+  {
+    "key": "alt+9",
+    "command": "-workbench.action.openEditorAtIndex9"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "-workbench.action.terminal.focusFind",
+    "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocusInAny && terminalHasBeenCreated || terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "shift+h",
+    "command": "dance.select.lineStart",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "shift": "jump"
+    }
+  },
+  {
+    "key": "shift+l",
+    "command": "dance.select.lineEnd",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "shift": "jump"
+    }
+  },
+  {
+    "key": "shift+4",
+    "command": "dance.select.lineEnd",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "shift": "jump"
+    }
+  },
+  {
+    "key": "shift+g",
+    "command": "dance.select.lineEnd",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "count": 2147483647,
+      "shift": "jump"
+    }
+  },
+  {
+    "key": "shift+x",
+    "command": "dance.select.line.above.extend",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible"
+  },
+  {
+    "key": "shift+s",
+    "command": "dance.openMenu",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "menu": "surround",
+      "delay": 650
+    }
+  },
+  {
+    "key": ",",
+    "command": "dance.openMenu",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "menu": "sio-tools",
+      "delay": 650
+    }
+  },
+  {
+    "key": "space",
+    "command": "dance.openMenu",
+    "when": "editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "menu": "space",
+      "delay": 650
+    }
+  },
+  {
+    "key": "shift+v",
+    "command": "runCommands",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "commands": [
+        {
+          "command": "dance.modes.set",
+          "args": {
+            "mode": "helix/select"
+          }
+        },
+        "dance.select.line.below.extend"
+      ]
+    }
+  },
+  {
+    "key": "shift+d",
+    "command": "runCommands",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "commands": [
+        {
+          "command": "dance.select.lineEnd",
+          "args": {
+            "shift": "extend"
+          }
+        },
+        {
+          "command": "dance.selections.saveText",
+          "args": {
+            "register": "dquote"
+          }
+        },
+        "dance.edit.delete"
+      ]
+    }
+  },
+  {
+    "key": "escape",
+    "command": "runCommands",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible && !dance.isRecording && !markersNavigationVisible && !referenceSearchVisible && !treeFindOpen",
+    "args": {
+      "commands": [
+        "dance.cancel",
+        "dance.selections.reduce",
+        {
+          "command": "dance.run",
+          "args": {
+            "code": "const e = vscode.window.activeTextEditor; e.selections = [e.selection];"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "listFocus && !inputFocus && !inQuickOpen"
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "listFocus && !inputFocus && !inQuickOpen"
+  },
+  {
+    "key": "h",
+    "command": "list.collapse",
+    "when": "listFocus && !inputFocus && !inQuickOpen"
+  },
+  {
+    "key": "l",
+    "command": "list.expand",
+    "when": "listFocus && !inputFocus && !inQuickOpen"
+  },
+  {
+    "key": "g g",
+    "command": "list.focusFirst",
+    "when": "listFocus && !inputFocus && !inQuickOpen"
+  },
+  {
+    "key": "shift+g",
+    "command": "list.focusLast",
+    "when": "listFocus && !inputFocus && !inQuickOpen"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "listFocus && !inputFocus && !inQuickOpen"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus && !explorerResourceReadonly"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus && !explorerResourceReadonly"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus && !explorerResourceReadonly"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus && !explorerResourceReadonly"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "search.action.focusSearchList",
+    "when": "searchViewletFocus && inputFocus && !inQuickOpen"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "(listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen && !treeFindOpen"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "space",
+    "command": "dance.openMenu",
+    "when": "(listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen",
+    "args": {
+      "menu": "space"
+    }
+  },
+  {
+    "key": "shift+;",
+    "command": "workbench.action.showCommands",
+    "when": "(editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+w h",
+    "command": "workbench.action.navigateLeft",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "(editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+w j",
+    "command": "workbench.action.navigateDown",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "(editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+w k",
+    "command": "workbench.action.navigateUp",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+w l",
+    "command": "workbench.action.navigateRight",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "(editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+w v",
+    "command": "workbench.action.splitEditorRight",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+w s",
+    "command": "workbench.action.splitEditorDown",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+w w",
+    "command": "workbench.action.focusNextGroup",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+w o",
+    "command": "sio.panes.only",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "sio.panes.close",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+w n",
+    "command": "workbench.action.files.newUntitledFile",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+w =",
+    "command": "workbench.action.evenEditorWidths",
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarFocus && !inputFocus && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.closePanel",
+    "when": "panelFocus && !inputFocus && !terminalFocus && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "sio.buffers.next",
+    "when": "!inQuickOpen"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "sio.buffers.previous",
+    "when": "!inQuickOpen"
+  },
+  {
+    "key": "ctrl+\\",
+    "command": "sio.terminals.open",
+    "when": "!inQuickOpen"
+  },
+  {
+    "key": "ctrl+shift+space",
+    "command": "sio.buffers.pick",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "s",
+    "command": "git.stage",
+    "when": "scmResourceState && listFocus && !inputFocus"
+  },
+  {
+    "key": "u",
+    "command": "git.unstage",
+    "when": "scmResourceState && listFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u000b"
+    },
+    "when": "terminalFocus && !terminalFindFocused"
+  },
+  {
+    "key": "M",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "command": "dance.openMenu",
+    "args": {
+      "menu": "match",
+      "delay": 650
+    }
+  },
+  {
+    "key": "M",
+    "when": "editorTextFocus && dance.mode == 'helix/select' && !suggestWidgetVisible && !findWidgetVisible",
+    "command": "dance.openMenu",
+    "args": {
+      "menu": "match",
+      "pass": [
+        {
+          "shift": "extend"
+        }
+      ],
+      "delay": 650
+    }
+  },
+  {
+    "key": "Z",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "command": "dance.openMenu",
+    "args": {
+      "menu": "view",
+      "$exclude": [],
+      "delay": 650
+    }
+  },
+  {
+    "key": "Z",
+    "when": "editorTextFocus && dance.mode == 'helix/select' && !suggestWidgetVisible && !findWidgetVisible",
+    "command": "dance.openMenu",
+    "args": {
+      "menu": "view",
+      "$exclude": [],
+      "delay": 650
+    }
+  },
+  {
+    "key": "Shift+Z",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "command": "dance.openMenu",
+    "args": {
+      "menu": "view",
+      "locked": true,
+      "$exclude": [],
+      "delay": 650
+    }
+  },
+  {
+    "key": "Shift+Z",
+    "when": "editorTextFocus && dance.mode == 'helix/select' && !suggestWidgetVisible && !findWidgetVisible",
+    "command": "dance.openMenu",
+    "args": {
+      "menu": "view",
+      "locked": true,
+      "$exclude": [],
+      "delay": 650
+    }
+  },
+  {
+    "key": "g",
+    "command": "dance.run",
+    "when": "editorTextFocus && dance.mode == 'helix/normal' && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "code": "if (count) { await vscode.commands.executeCommand('dance.select.to', {count, shift: 'jump'}); } else { await vscode.commands.executeCommand('dance.openMenu', {menu: 'goto', delay: 650, pass: [{shift: 'jump'}]}); }"
+    }
+  },
+  {
+    "key": "g",
+    "command": "dance.run",
+    "when": "editorTextFocus && dance.mode == 'helix/select' && !suggestWidgetVisible && !findWidgetVisible",
+    "args": {
+      "code": "if (count) { await vscode.commands.executeCommand('dance.select.to', {count, shift: 'extend'}); } else { await vscode.commands.executeCommand('dance.openMenu', {menu: 'goto', delay: 650, pass: [{shift: 'extend'}]}); }"
+    }
+  }
+]
