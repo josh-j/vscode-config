@@ -4,7 +4,7 @@ My user settings and Helix-style keybindings for VS Code. The JSON files are mea
 
 ## Setup
 
-1. Install [VS Code](https://code.visualstudio.com/) and the required extensions below.
+1. Install [VS Code](https://code.visualstudio.com/), then clone or download this repository and install the required extensions below.
 2. In the Command Palette, run **Preferences: Open User Settings (JSON)** and merge [`settings.json`](settings.json) into your user settings. Back up any existing settings first.
 3. Run **Preferences: Open Keyboard Shortcuts (JSON)** and merge [`keybindings.json`](keybindings.json) into your user keybindings. These shortcuts replace several VS Code defaults, so review conflicts if you already have custom bindings.
 4. Reload the VS Code window.
@@ -17,7 +17,7 @@ VS Code stores these files in `%APPDATA%\Code\User\` on Windows, `~/Library/Appl
 | --- | --- | --- |
 | Required for the modal keymap | [Dance](https://marketplace.visualstudio.com/items?itemName=gregoire.dance) (`gregoire.dance`) | Provides the `dance.*` modes and commands used throughout both files. |
 | Required for the Helix layout | [Dance - Helix keybindings](https://marketplace.visualstudio.com/items?itemName=gregoire.dance-helix) (`gregoire.dance-helix`) | Provides the `helix/normal`, `helix/insert`, and `helix/select` modes selected by the settings. |
-| Required for the buffer and pane actions | [Helix Workbench](extensions/helix-workbench/README.md) (`sio.helix-workbench`) | Provides the `sio.*` commands used by the keybindings and Dance menus. Build it from the source in this repo. |
+| Required for the buffer and pane actions | [Helix Workbench](extensions/helix-workbench/README.md) (`sio.helix-workbench`) | Provides the `sio.*` commands used by the keybindings and Dance menus. Install the included [VSIX](extensions/helix-workbench/helix-workbench-0.2.0.vsix). |
 | Recommended for Nix files | [Nix IDE](https://marketplace.visualstudio.com/items?itemName=jnoortheen.nix-ide) (`jnoortheen.nix-ide`) | Supplies the configured Nix formatter and language support. Install `nixd` and `alejandra` on your `PATH` for the configured language server and formatting. |
 | Recommended for shell scripts | [shell-format](https://marketplace.visualstudio.com/items?itemName=foxundermoon.shell-format) (`foxundermoon.shell-format`) | Supplies the configured shell formatter. Install `shfmt` on your `PATH`, or set `shellformat.path` locally. |
 
@@ -30,13 +30,12 @@ code --install-extension jnoortheen.nix-ide
 code --install-extension foxundermoon.shell-format
 ```
 
-Build and install Helix Workbench from this checkout:
+Install the included Helix Workbench VSIX from this checkout:
 
 ```sh
-python3 extensions/helix-workbench/package.py helix-workbench.vsix
-code --install-extension helix-workbench.vsix
+code --install-extension extensions/helix-workbench/helix-workbench-0.2.0.vsix
 ```
 
-Reload VS Code after installation. On Windows, use `python` if `python3` is not available. The extension has no runtime dependencies; see its [README](extensions/helix-workbench/README.md) for the buffer and pane commands. If you skip it, remove the `sio.*` bindings, Dance menu entries, and `terminal.integrated.commandsToSkipShell` entries because those actions will not work.
+Reload VS Code after installation. The extension has no runtime dependencies; see its [README](extensions/helix-workbench/README.md) for the buffer and pane commands and source build instructions. If you skip it, remove the `sio.*` bindings, Dance menu entries, and `terminal.integrated.commandsToSkipShell` entries because those actions will not work.
 
 The configured editor and terminal font is **JetBrains Mono**. Install that font for the same appearance, or change the two font settings to one you already have.

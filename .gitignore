@@ -1,1 +1,2 @@
 *.vsix
+!extensions/helix-workbench/helix-workbench-0.2.0.vsix

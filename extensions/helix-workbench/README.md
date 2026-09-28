@@ -38,7 +38,9 @@ using an isolated user-data directory, never the real editing session. It tests
 text/untitled preservation, terminal cycling and movement, duplicate terminal
 names, and live-shell survival across pane operations and panel adoption.
 
-To install an updated version, increment `package.json`'s version, run
-`python3 package.py /tmp/helix-workbench.vsix`, then
-`code --install-extension /tmp/helix-workbench.vsix`. Reload the window to
-load the new extension code.
+From the repository root, install the included VSIX with
+`code --install-extension extensions/helix-workbench/helix-workbench-0.2.0.vsix`.
+To build an updated version from source, increment `package.json`'s version,
+run `python3 package.py /tmp/helix-workbench.vsix` from this directory, then
+`code --install-extension /tmp/helix-workbench.vsix`. Reload the window to load
+the new extension code.
