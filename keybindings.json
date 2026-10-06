@@ -491,6 +491,11 @@
     "when": "!inQuickOpen"
   },
   {
+    "key": "ctrl+w t",
+    "command": "sio.terminals.open",
+    "when": "!inQuickOpen"
+  },
+  {
     "key": "ctrl+\\",
     "command": "sio.terminals.open",
     "when": "!inQuickOpen"
@@ -598,5 +603,15 @@
     "args": {
       "code": "if (count) { await vscode.commands.executeCommand('dance.select.to', {count, shift: 'extend'}); } else { await vscode.commands.executeCommand('dance.openMenu', {menu: 'goto', delay: 650, pass: [{shift: 'extend'}]}); }"
     }
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.terminal.kill",
+    "when": "terminalFocus && !terminalFindFocused && !inQuickOpen"
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "!editorTextFocus && !activeEditorGroupEmpty && !sideBarFocus && !panelFocus && !terminalFocus && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible"
   }
 ]

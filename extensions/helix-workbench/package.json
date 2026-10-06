@@ -3,7 +3,7 @@
   "publisher": "sio",
   "displayName": "Helix Workbench",
   "description": "Shared text and terminal buffers with separate pane/buffer commands for Dance Helix.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "engines": {
     "vscode": "^1.83.0"
   },
@@ -43,7 +43,21 @@
       {
         "command": "sio.terminals.open",
         "title": "Helix: Open Terminal Buffer"
+      },
+      {
+        "command": "sio.dashboard.open",
+        "title": "Helix: Open Dashboard"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Helix Workbench",
+      "properties": {
+        "helixWorkbench.dashboard.showOnStartup": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the Helix dashboard at startup in empty windows when no editors are restored. Projects without restored editors show the file explorer. Set workbench.startupEditor to none to replace the built-in welcome page."
+        }
+      }
+    }
   }
 }

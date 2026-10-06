@@ -1,4 +1,6 @@
 {
+  "window.titleBarStyle": "native",
+  "window.menuBarVisibility": "toggle",
   "dance.defaultMode": "helix/normal",
   "dance.menus": {
     "match": {
@@ -1478,12 +1480,20 @@
   "workbench.editor.showTabs": "none",
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.startupEditor": "welcomePage",
+  "workbench.startupEditor": "none",
+  "window.restoreWindows": "none",
+  "extensions.experimental.affinity": {
+    "gregoire.dance": 1,
+    "gregoire.dance-helix": 1,
+    "sio.helix-workbench": 1
+  },
+  "workbench.editor.restoreEditors": false,
+  "terminal.integrated.enablePersistentSessions": false,
+  "files.hotExit": "off",
+  "helixWorkbench.dashboard.showOnStartup": true,
   "workbench.tips.enabled": false,
   "workbench.list.defaultFindMode": "filter",
   "workbench.list.typeNavigationMode": "trigger",
-  "window.menuBarVisibility": "toggle",
-  "window.commandCenter": false,
   "workbench.editor.revealIfOpen": false,
   "workbench.editor.closeEmptyGroups": false,
   "nix.enableLanguageServer": true,
@@ -1501,10 +1511,13 @@
   "[nix]": {
     "editor.defaultFormatter": "jnoortheen.nix-ide"
   },
+  "shellformat.path": "shfmt",
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.hideOnStartup": "always",
   "terminal.integrated.allowChords": true,
   "terminal.integrated.commandsToSkipShell": [
     "sio.buffers.pick",
@@ -1515,54 +1528,12 @@
     "sio.panes.only",
     "sio.terminals.open"
   ],
-  "workbench.colorTheme": "Default Dark Modern",
-  "workbench.colorCustomizations": {
-    "editor.background": "#211c1c",
-    "editor.foreground": "#f3f2f2",
-    "editorLineNumber.foreground": "#6d6666",
-    "editorLineNumber.activeForeground": "#f3f2f2",
-    "editor.lineHighlightBackground": "#372f2f",
-    "editor.selectionBackground": "#514949",
-    "editorCursor.foreground": "#a6a6a6",
-    "editorIndentGuide.background1": "#706665",
-    "editorIndentGuide.activeBackground1": "#6d6666",
-    "sideBar.background": "#211c1c",
-    "sideBar.foreground": "#f3f2f2",
-    "sideBarTitle.foreground": "#f3f2f2",
-    "activityBar.background": "#372f2f",
-    "activityBar.foreground": "#f3f2f2",
-    "titleBar.activeBackground": "#372f2f",
-    "titleBar.activeForeground": "#f3f2f2",
-    "statusBar.background": "#322a2a",
-    "statusBar.foreground": "#f3f2f2",
-    "panel.background": "#211c1c",
-    "panelTitle.activeForeground": "#a6a6a6",
-    "tab.activeBackground": "#211c1c",
-    "tab.activeForeground": "#f3f2f2",
-    "tab.inactiveBackground": "#372f2f",
-    "tab.inactiveForeground": "#b5b0b0",
-    "list.activeSelectionBackground": "#514949",
-    "list.activeSelectionForeground": "#e7e4e4",
-    "list.hoverBackground": "#322a2a",
-    "input.background": "#372f2f",
-    "input.foreground": "#f3f2f2",
-    "dropdown.background": "#372f2f",
-    "dropdown.foreground": "#f3f2f2",
-    "terminal.background": "#211c1c",
-    "terminal.foreground": "#f3f2f2",
-    "terminalCursor.foreground": "#a6a6a6"
-  },
-  "editor.tokenColorCustomizations": {
-    "comments": "#6d6666",
-    "keywords": "#a6a6a6",
-    "strings": "#999999",
-    "functions": "#999999",
-    "types": "#999999",
-    "variables": "#f3f2f2",
-    "numbers": "#999999"
-  },
-  "editor.fontFamily": "'JetBrains Mono', monospace",
+  "workbench.colorTheme": "NoctaliaTheme",
+  "editor.fontFamily": "'DMMono Nerd Font Mono', monospace",
   "editor.fontSize": 16,
-  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
-  "terminal.integrated.fontSize": 16
+  "terminal.integrated.fontFamily": "DMMono Nerd Font Mono",
+  "terminal.integrated.fontSize": 16,
+  "telemetry.feedback.enabled": false,
+  "telemetry.editStats.enabled": false,
+  "editor.experimentalGpuAcceleration": "on"
 }

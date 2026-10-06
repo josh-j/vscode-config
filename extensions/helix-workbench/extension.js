@@ -1,8 +1,10 @@
 const vscode = require('vscode');
+const { registerDashboard } = require('./dashboard');
 
 function activate(context) {
   const groups = vscode.window.tabGroups;
   let order = context.workspaceState.get('buffers', []);
+  let savedOrder = order;
   let busy = false;
   let terminalSerial = 0;
   const terminalIds = new WeakMap();
@@ -26,10 +28,15 @@ function activate(context) {
   function sync() {
     const present = new Set(tabs().map(id));
     order = order.filter(key => present.has(key));
-    for (const key of present) if (!order.includes(key)) order.push(key);
+    const known = new Set(order);
+    for (const key of present) if (!known.has(key)) { order.push(key); known.add(key); }
     for (const key of terminalTabs.keys()) if (!present.has(key)) terminalTabs.delete(key);
     // Terminal tab IDs are session-local; restored tabs get fresh identities.
-    void context.workspaceState.update('buffers', order.filter(key => !terminalTabs.has(key)));
+    const textOrder = order.filter(key => !terminalTabs.has(key));
+    if (textOrder.length !== savedOrder.length || textOrder.some((key, index) => key !== savedOrder[index])) {
+      savedOrder = textOrder;
+      void context.workspaceState.update('buffers', textOrder);
+    }
     return order;
   }
 
@@ -117,10 +124,8 @@ function activate(context) {
   }
 
   async function closePane() {
-    if (groups.all.length === 1) {
-      await vscode.commands.executeCommand('workbench.action.closeWindow');
-      return;
-    }
+    // Keep the final pane and its buffers open; pane-close must not quit VS Code.
+    if (groups.all.length === 1) return;
     const source = groups.activeTabGroup;
     const target = groups.all.find(group => group !== source);
     const restore = activeId(target);
@@ -202,8 +207,11 @@ function activate(context) {
       finally { busy = false; sync(); }
     }));
   }
-  context.subscriptions.push(groups.onDidChangeTabs(() => { if (!busy) sync(); }));
+  context.subscriptions.push(groups.onDidChangeTabs(event => {
+    if (!busy && (event.opened.length || event.closed.length)) sync();
+  }));
   sync();
+  registerDashboard(context);
   return { buffers: () => [...sync()] };
 }
 
