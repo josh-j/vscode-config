@@ -1518,7 +1518,9 @@
   "terminal.integrated.defaultLocation": "editor",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.hideOnStartup": "always",
-  "terminal.integrated.allowChords": true,
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "terminal.integrated.allowMnemonics": false,
   "terminal.integrated.commandsToSkipShell": [
     "sio.buffers.pick",
     "sio.buffers.next",

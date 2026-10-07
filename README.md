@@ -46,6 +46,10 @@ The profile selects **NoctaliaTheme**, provided by [Noctalia's VS Code theme](ht
 
 Empty windows start on the Helix dashboard; opening a project shows its files. The profile disables window/editor restoration, terminal persistence, and Hot Exit, so it starts fresh rather than restoring the previous session. Change those settings locally if you prefer session restoration.
 
-`Ctrl+W T` opens a terminal buffer. `Ctrl+W Q` closes a split pane, kills the focused terminal, or closes the active non-text editor, depending on focus. The final text pane stays open.
+`Ctrl+W T` opens a terminal buffer when focus is outside the terminal. `Ctrl+W Q` closes a split pane or the active non-text editor when focus is outside the terminal. The final text pane stays open.
+
+Terminals pass keyboard shortcuts to the shell, disable VS Code chords, and leave Alt keys available for Emacs-style input. In a shell using an Emacs keymap, `Ctrl+A/E` move to the beginning/end of the line, `Ctrl+B/F` move by character, `Alt+B/F` move by word, `Ctrl+W` deletes the previous word, `Ctrl+K/U` delete to the end/start of the line, `Ctrl+Y` yanks, and `Ctrl+R` searches history. Terminal Emacs also receives prefixes such as `Ctrl+X`. This profile controls key routing; the shell or terminal application supplies the editing behavior.
+
+While terminal input has focus, `Ctrl+W` is sent immediately instead of starting pane commands. Use the mouse or Command Palette for VS Code buffer/pane actions, or return focus to an editor before using `Ctrl+W` chords. VS Code buffer shortcuts such as `Ctrl+Tab` are also passed to the terminal by this setting.
 
 The profile uses native window decorations and enables experimental editor GPU acceleration. The NixOS launcher separately supplies native Wayland and Vulkan flags; these JSON files do not configure launcher arguments.

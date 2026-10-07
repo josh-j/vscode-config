@@ -403,7 +403,7 @@
   {
     "key": "ctrl+w h",
     "command": "workbench.action.navigateLeft",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+h",
@@ -413,7 +413,7 @@
   {
     "key": "ctrl+w j",
     "command": "workbench.action.navigateDown",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+j",
@@ -423,12 +423,12 @@
   {
     "key": "ctrl+w k",
     "command": "workbench.action.navigateUp",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+w l",
     "command": "workbench.action.navigateRight",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+l",
@@ -438,42 +438,42 @@
   {
     "key": "ctrl+w v",
     "command": "workbench.action.splitEditorRight",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+w s",
     "command": "workbench.action.splitEditorDown",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+w w",
     "command": "workbench.action.focusNextGroup",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+w o",
     "command": "sio.panes.only",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+w q",
     "command": "sio.panes.close",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+w n",
     "command": "workbench.action.files.newUntitledFile",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+w =",
     "command": "workbench.action.evenEditorWidths",
-    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible) || (terminalFocus && terminalEditorFocus && !terminalFindFocused && !inQuickOpen)"
+    "when": "((editorTextFocus && (dance.mode == 'helix/normal' || dance.mode == 'helix/select') || ((listFocus || sideBarFocus || panelFocus || activeEditorGroupEmpty) && !inputFocus && !terminalFocus && !inQuickOpen)) && !suggestWidgetVisible && !findWidgetVisible && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible)"
   },
   {
     "key": "ctrl+w q",
     "command": "workbench.action.closeSidebar",
-    "when": "sideBarFocus && !inputFocus && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible"
+    "when": "sideBarFocus && !inputFocus && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible && !terminalFocus"
   },
   {
     "key": "ctrl+w q",
@@ -493,7 +493,7 @@
   {
     "key": "ctrl+w t",
     "command": "sio.terminals.open",
-    "when": "!inQuickOpen"
+    "when": "!inQuickOpen && !terminalFocus"
   },
   {
     "key": "ctrl+\\",
@@ -603,11 +603,6 @@
     "args": {
       "code": "if (count) { await vscode.commands.executeCommand('dance.select.to', {count, shift: 'extend'}); } else { await vscode.commands.executeCommand('dance.openMenu', {menu: 'goto', delay: 650, pass: [{shift: 'extend'}]}); }"
     }
-  },
-  {
-    "key": "ctrl+w q",
-    "command": "workbench.action.terminal.kill",
-    "when": "terminalFocus && !terminalFindFocused && !inQuickOpen"
   },
   {
     "key": "ctrl+w q",
