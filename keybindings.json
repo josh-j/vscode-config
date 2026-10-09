@@ -608,5 +608,21 @@
     "key": "ctrl+w q",
     "command": "workbench.action.closeActiveEditor",
     "when": "!editorTextFocus && !activeEditorGroupEmpty && !sideBarFocus && !panelFocus && !terminalFocus && !inQuickOpen && !codeActionMenuVisible && !parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0010"
+    },
+    "when": "terminalFocus && !terminalFindFocused && !inQuickOpen"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u000e"
+    },
+    "when": "terminalFocus && !terminalFindFocused && !inQuickOpen"
   }
 ]
